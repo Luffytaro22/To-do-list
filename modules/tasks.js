@@ -9,8 +9,13 @@ let tasks = [
 ];
 
 export default class Task {
-  constructor(description) {
-    this.description = description;
+  constructor() {
+    this.tasks = [];
+
+    /* Initialize the array with the information in the local storage */
+    if (localStorage.getItem('tasks')) {
+      this.tasks = JSON.parse(localStorage.getItem('tasks'));
+    }
   }
 
   createTask() {
