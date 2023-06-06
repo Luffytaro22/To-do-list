@@ -12,7 +12,7 @@ export class Task {
     }
   }
 
-  createTask() {
+  createTask(task) {
     /* Create elements */
     const li = document.createElement('li');
     const checkbox = document.createElement('input');
@@ -23,7 +23,7 @@ export class Task {
     li.classList.add('tasks');
     checkbox.type = 'checkbox';
     checkbox.value = 'off';
-    pDescription.textContent = this.description;
+    pDescription.textContent = task.description;
     dotsIcon.classList.add('fa-solid', 'fa-ellipsis-vertical');
 
     /* Append elements */
@@ -40,5 +40,11 @@ export class Task {
 
     /* Create the tasks key in the local storage */
     localStorage.setItem('tasks', JSON.stringify(this.tasks));
+  }
+
+  displayTasks() {
+    this.tasks.forEach((task) => {
+      this.createTask(task);
+    }); 
   }
 }
