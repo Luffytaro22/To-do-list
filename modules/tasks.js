@@ -21,6 +21,7 @@ export default class Task {
     const dotsIcon = document.createElement('i');
 
     /* Assign classes and attributes */
+    li.classList.add('tasks');
     checkbox.type = 'checkbox';
     checkbox.value = 'off';
     pDescription.textContent = this.description;
