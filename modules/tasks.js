@@ -18,17 +18,20 @@ export class Task {
     const checkbox = document.createElement('input');
     const pDescription = document.createElement('p');
     const dotsIcon = document.createElement('i');
+    const div = document.createElement('div');
 
     /* Assign classes and attributes */
     li.classList.add('tasks');
+    div.classList.add('div-check');
     checkbox.type = 'checkbox';
     checkbox.value = 'off';
     pDescription.textContent = task.description;
     dotsIcon.classList.add('fa-solid', 'fa-ellipsis-vertical');
 
     /* Append elements */
-    li.appendChild(checkbox);
-    li.appendChild(pDescription);
+    div.appendChild(checkbox);
+    div.appendChild(pDescription);
+    li.appendChild(div);
     li.appendChild(dotsIcon);
     tasksContainer.insertBefore(li, clearButton);
     index += 1;
