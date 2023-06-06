@@ -1,4 +1,4 @@
-import { tasksContainer } from './elements.js';
+import { tasksContainer, clearButton } from './elements.js';
 
 let tasks = [
   {
@@ -30,6 +30,6 @@ export default class Task {
     li.appendChild(checkbox);
     li.appendChild(pDescription);
     li.appendChild(dotsIcon);
-    tasksContainer.appendChild(li);
+    tasksContainer.insertBefore(li, clearButton);
   }
 }
