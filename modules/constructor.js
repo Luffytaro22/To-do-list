@@ -1,4 +1,4 @@
-import { Task } from './tasks.js';
+import Task from './tasks.js';
 
 export default class TaskConstructor extends Task {
   constructor(description) {

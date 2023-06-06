@@ -2,7 +2,7 @@ import './styles.css';
 
 import { taskInput } from '../modules/elements.js';
 import addTask from '../modules/addTask.js';
-import { Task } from '../modules/tasks.js';
+import Task from '../modules/tasks.js';
 
 const myTasks = new Task();
 myTasks.displayTasks();

@@ -2,7 +2,7 @@ import { tasksContainer, clearButton } from './elements.js';
 
 let index = 0;
 
-export class Task {
+export default class Task {
   constructor() {
     this.tasks = [];
     this.status = 'off';
