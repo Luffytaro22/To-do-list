@@ -1,12 +1,12 @@
-import Task from "./tasks";
+import TaskConstructor from "./constructor";
 import { taskInput } from "./elements";
 
 export default function addTask() {
   /* Create a new instance of the Task Class */
-  const task = new Task(taskInput.value);
+  const task = new TaskConstructor(taskInput.value);
 
   task.createTask();
-  
+
   /* Eliminates the information in the input */
   taskInput.value = '';
 }
