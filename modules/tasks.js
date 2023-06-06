@@ -1,11 +1,11 @@
 import { tasksContainer, clearButton } from './elements.js';
 
-export let index = 0;
+let index = 0;
 
 export class Task {
   constructor() {
     this.tasks = [];
-
+    this.status = 'off';
     /* Initialize the array with the information in the local storage */
     if (localStorage.getItem('tasks')) {
       this.tasks = JSON.parse(localStorage.getItem('tasks'));
@@ -24,7 +24,7 @@ export class Task {
     li.classList.add('tasks');
     div.classList.add('div-check');
     checkbox.type = 'checkbox';
-    checkbox.value = 'off';
+    checkbox.value = this.status;
     pDescription.textContent = task.description;
     dotsIcon.classList.add('fa-solid', 'fa-ellipsis-vertical');
 
@@ -39,7 +39,7 @@ export class Task {
 
   storage() {
     /* Add the object to the array */
-    this.tasks.push({description: `${this.description}`, completed: false, index: `${index}`});
+    this.tasks.push({ description: `${this.description}`, completed: false, index: `${index}` });
 
     /* Create the tasks key in the local storage */
     localStorage.setItem('tasks', JSON.stringify(this.tasks));
@@ -48,6 +48,6 @@ export class Task {
   displayTasks() {
     this.tasks.forEach((task) => {
       this.createTask(task);
-    }); 
+    });
   }
 }

@@ -1,5 +1,5 @@
-import TaskConstructor from './constructor';
-import { taskInput } from './elements';
+import TaskConstructor from './constructor.js';
+import { taskInput } from './elements.js';
 
 export default function addTask() {
   /* Create a new instance of the Task Class */
