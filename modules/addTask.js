@@ -6,4 +6,7 @@ export default function addTask() {
   const task = new Task(taskInput.value);
 
   task.createTask();
+  
+  /* Eliminates the information in the input */
+  taskInput.value = '';
 }
