@@ -1,14 +1,8 @@
 import { tasksContainer, clearButton } from './elements.js';
 
-let tasks = [
-  {
-    description: '',
-    completed: true,
-    index: 1,
-  }
-];
+export let index = 0;
 
-export default class Task {
+export class Task {
   constructor() {
     this.tasks = [];
 
@@ -37,5 +31,14 @@ export default class Task {
     li.appendChild(pDescription);
     li.appendChild(dotsIcon);
     tasksContainer.insertBefore(li, clearButton);
+    index += 1;
+  }
+
+  storage() {
+    /* Add the object to the array */
+    this.tasks.push({description: `${this.description}`, completed: false, index: `${index}`});
+
+    /* Create the tasks key in the local storage */
+    localStorage.setItem('tasks', JSON.stringify(this.tasks));
   }
 }
