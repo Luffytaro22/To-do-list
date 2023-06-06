@@ -62,15 +62,12 @@ h1 {
   outline: none;
   padding: 5px 0;
   width: 90%;
-  box-sizing: border-box;
+  font-family: Yuji Hentaigana Akebono, sans-serif;
+  font-weight: 600;
 }
 
 #task::placeholder {
   font-family: Yuji Hentaigana Akebono, sans-serif;
   font-style: italic;
   font-weight: 600;
-}
-
-#task:focus {
-  font-family: Yuji Hentaigana Akebono, sans-serif;
 }
