@@ -51,7 +51,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Comming soon.]()
+- [Live Demo](https://luffytaro22.github.io/To-do-list/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -85,7 +85,7 @@ In order to run this project you need to:
 `npm start`
 
 ### Deployment
-Cooming soon!
+You can deploy the project with [this link](https://luffytaro22.github.io/To-do-list/)
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
