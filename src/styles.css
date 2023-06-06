@@ -1,6 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Yuji+Hentaigana+Akebono&display=swap');
+
 * {
   margin: 0;
   padding: 0;
+}
+
+body {
+  font-family: Yuji Hentaigana Akebono, sans-serif;
+}
+
+main {
+  min-height: calc(100vh);
 }
 
 h1 {
@@ -8,21 +18,30 @@ h1 {
   margin: 50px 0;
 }
 
+#tasks-container p {
+  font-weight: 600;
+  max-width: 80%;
+}
+
 #list-container {
   display: flex;
   justify-content: center;
+  margin-bottom: 50px;
 }
 
 #tasks-container {
   list-style: none;
-  border: 1px solid black;
+  box-shadow: 0 0 5px 3px darkgray;
+  width: 90%;
+  max-width: 443px;
 }
 
 .tasks {
   display: flex;
   justify-content: space-between;
-  padding: 5px 20px;
-  border-bottom: 1px solid black;
+  align-items: center;
+  padding: 10px 20px;
+  border-bottom: 1px solid darkgray;
 }
 
 .div-check {
@@ -32,9 +51,26 @@ h1 {
 
 #clear-button {
   width: 100%;
+  padding: 20px 20px;
+  border: none;
+  font-family: Yuji Hentaigana Akebono, sans-serif;
+  font-weight: 600;
 }
 
 #task {
   border: none;
   outline: none;
+  padding: 5px 0;
+  width: 90%;
+  box-sizing: border-box;
+}
+
+#task::placeholder {
+  font-family: Yuji Hentaigana Akebono, sans-serif;
+  font-style: italic;
+  font-weight: 600;
+}
+
+#task:focus {
+  font-family: Yuji Hentaigana Akebono, sans-serif;
 }
