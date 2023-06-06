@@ -6,3 +6,13 @@
 body {
   background-color: aqua;
 }
+
+#tasks-container {
+  list-style: none;
+  width: 20%;
+}
+
+.tasks {
+  display: flex;
+  justify-content: space-between;
+}
