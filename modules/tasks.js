@@ -58,15 +58,18 @@ export default class Task {
       /* A function to remove the tasks */
       const removeTask = () => {
         /* Eliminates the selected task */
+        this.tasks = JSON.parse(localStorage.getItem('tasks'));
         this.tasks = this.tasks.filter((obj) => obj.index !== task.index);
         /* Iterate through the array beginning at the eliminated index and changes the indexes */
         for (let i = task.index; i < this.tasks.length; i += 1) {
           this.tasks[i].index = i;
+          index = i;
         }
-        /* Removes the element in the DOM */
-        li.remove();
         /* Actualize the local storage */
         localStorage.setItem('tasks', JSON.stringify(this.tasks));
+        /* Removes the element in the DOM */
+        li.remove();
+        index++;
       };
 
       trashIcon.addEventListener('click', removeTask);
@@ -91,7 +94,7 @@ export default class Task {
 
   storage() {
     /* Add the object to the array */
-    this.tasks.push({ description: `${this.description}`, completed: false, index: `${index}` });
+    this.tasks.push({ description: `${this.description}`, completed: false, index: index });
 
     /* Create the tasks key in the local storage */
     localStorage.setItem('tasks', JSON.stringify(this.tasks));
