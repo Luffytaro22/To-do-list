@@ -9,7 +9,7 @@ myTasks.displayTasks();
 
 taskInput.addEventListener('keypress', (event) => {
   /* If the code of the keyword is 13 (enter) then calls the function */
-  if (event.charCode === 13) {
+  if (event.charCode === 13 && taskInput.value !== '') {
     addTask();
   }
 });

@@ -16,9 +16,10 @@ export default class Task {
     /* Create elements */
     const li = document.createElement('li');
     const checkbox = document.createElement('input');
-    const pDescription = document.createElement('p');
+    const pDescription = document.createElement('textarea');
     const dotsIcon = document.createElement('i');
     const div = document.createElement('div');
+    const trashIcon = document.createElement('i');
 
     /* Assign classes and attributes */
     li.classList.add('tasks');
@@ -27,14 +28,65 @@ export default class Task {
     checkbox.value = this.status;
     pDescription.textContent = task.description;
     dotsIcon.classList.add('fa-solid', 'fa-ellipsis-vertical');
+    trashIcon.classList.add('fa-regular', 'fa-trash-can', 'hide');
 
     /* Append elements */
     div.appendChild(checkbox);
     div.appendChild(pDescription);
     li.appendChild(div);
     li.appendChild(dotsIcon);
+    li.appendChild(trashIcon);
     tasksContainer.insertBefore(li, clearButton);
     index += 1;
+
+    const showRemoveEdit = () => {
+      dotsIcon.classList.add('hide');
+      trashIcon.classList.remove('hide');
+      li.classList.add('background');
+
+      /* A function to edit the tasks */
+      const editTask = () => {
+        /* Changes the description of the specific task */
+        task.description = pDescription.value;
+        /* Actualize the local storage */
+        localStorage.setItem('tasks', JSON.stringify(this.tasks));
+      };
+
+      /* Save the info in the textarea every time the user modifies it */
+      pDescription.addEventListener('input', editTask);
+
+      /* A function to remove the tasks */
+      const removeTask = () => {
+        /* Eliminates the selected task */
+        this.tasks = this.tasks.filter((obj) => obj.index !== task.index);
+        /* Iterate through the array beginning at the eliminated index and changes the indexes */
+        for (let i = task.index; i < this.tasks.length; i += 1) {
+          this.tasks[i].index = i;
+        }
+        /* Removes the element in the DOM */
+        li.remove();
+        /* Actualize the local storage */
+        localStorage.setItem('tasks', JSON.stringify(this.tasks));
+      };
+
+      trashIcon.addEventListener('click', removeTask);
+
+      const hideRemoveEdit = (event) => {
+        /* Check if the li element not contains the target element */
+        if (!li.contains(event.target)) {
+          dotsIcon.classList.remove('hide');
+          trashIcon.classList.add('hide');
+          li.classList.remove('background');
+        }
+      };
+
+      /* Listeners when the user clicks or taps */
+      window.addEventListener('mousedown', hideRemoveEdit);
+      window.addEventListener('touchstart', hideRemoveEdit);
+    };
+
+    /* A click listener to show the remove icon and modify the task */
+    pDescription.addEventListener('click', showRemoveEdit);
   }
 
   storage() {

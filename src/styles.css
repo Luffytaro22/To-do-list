@@ -18,9 +18,25 @@ h1 {
   margin: 50px 0;
 }
 
-#tasks-container p {
+.hide {
+  display: none;
+}
+
+#tasks-container textarea {
   font-weight: 600;
-  max-width: 80%;
+  width: 65vw;
+  max-width: 340px;
+  font-family: Yuji Hentaigana Akebono, sans-serif;
+  overflow: auto;
+  resize: none;
+  outline: none;
+  border: none;
+  padding-top: 15px;
+  background: none;
+}
+
+.background {
+  background-color: blanchedalmond;
 }
 
 #list-container {
