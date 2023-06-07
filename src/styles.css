@@ -18,6 +18,10 @@ h1 {
   margin: 50px 0;
 }
 
+.hide {
+  display: none;
+}
+
 #tasks-container p {
   font-weight: 600;
   max-width: 80%;
