@@ -39,10 +39,27 @@ export default class Task {
     tasksContainer.insertBefore(li, clearButton);
     index += 1;
 
-    const removeTask = (task) => {
+    const showRemoveEdit = () => {
       dotsIcon.classList.add('hide');
       trashIcon.classList.remove('hide');
+      li.classList.add('background');
+
+      const hideRemoveEdit = (event) => {
+        /* Check if the li element not contains the target element */
+        if (!li.contains(event.target)) {
+          dotsIcon.classList.remove('hide');
+          trashIcon.classList.add('hide');
+          li.classList.remove('background');
+        }
+      }
+      /* Listeners when the user clicks or taps */
+      window.addEventListener('mousedown', hideRemoveEdit);
+      window.addEventListener('touchstart', hideRemoveEdit);
     }
+
+    /* A click listener to show the remove icon and modify the task */
+    pDescription.addEventListener('click', showRemoveEdit);
+    
   }
 
   storage() {
