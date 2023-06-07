@@ -44,6 +44,7 @@ export default class Task {
       trashIcon.classList.remove('hide');
       li.classList.add('background');
 
+      /* A function to edit the tasks */
       const editTask = () => {
         /* Changes the description of the specific task */
         task.description = pDescription.value;
@@ -53,6 +54,23 @@ export default class Task {
 
       /* Save the info in the textarea every time the user modifies it */
       pDescription.addEventListener('input', editTask);
+
+
+      /* A function to remove the tasks */
+      const removeTask = () => {
+        /* Eliminates the selected task */
+        this.tasks = this.tasks.filter((obj) => obj.index !== task.index);
+        /* Iterate through the array beginning at the eliminated index and changes the indexes */
+        for (let i = task.index; i < this.tasks.length; i += 1) {
+          this.tasks[i].index = i;
+        }
+        /* Removes the element in the DOM */
+        li.remove();
+        /* Actualize the local storage */
+        localStorage.setItem('tasks', JSON.stringify(this.tasks));
+      }
+
+      trashIcon.addEventListener('click', removeTask);
 
       const hideRemoveEdit = (event) => {
         /* Check if the li element not contains the target element */
