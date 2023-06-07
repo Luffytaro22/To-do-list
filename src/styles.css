@@ -24,7 +24,8 @@ h1 {
 
 #tasks-container textarea {
   font-weight: 600;
-  max-width: 80%;
+  width: 65vw;
+  max-width: 340px;
   font-family: Yuji Hentaigana Akebono, sans-serif;
   overflow: auto;
   resize: none;
