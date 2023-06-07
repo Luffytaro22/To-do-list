@@ -16,7 +16,7 @@ export default class Task {
     /* Create elements */
     const li = document.createElement('li');
     const checkbox = document.createElement('input');
-    const pDescription = document.createElement('p');
+    const pDescription = document.createElement('textarea');
     const dotsIcon = document.createElement('i');
     const div = document.createElement('div');
     const trashIcon = document.createElement('i');
@@ -38,6 +38,11 @@ export default class Task {
     li.appendChild(trashIcon);
     tasksContainer.insertBefore(li, clearButton);
     index += 1;
+
+    const removeTask = (task) => {
+      dotsIcon.classList.add('hide');
+      trashIcon.classList.remove('hide');
+    }
   }
 
   storage() {
