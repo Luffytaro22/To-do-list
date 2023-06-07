@@ -50,11 +50,10 @@ export default class Task {
         task.description = pDescription.value;
         /* Actualize the local storage */
         localStorage.setItem('tasks', JSON.stringify(this.tasks));
-      }
+      };
 
       /* Save the info in the textarea every time the user modifies it */
       pDescription.addEventListener('input', editTask);
-
 
       /* A function to remove the tasks */
       const removeTask = () => {
@@ -68,7 +67,7 @@ export default class Task {
         li.remove();
         /* Actualize the local storage */
         localStorage.setItem('tasks', JSON.stringify(this.tasks));
-      }
+      };
 
       trashIcon.addEventListener('click', removeTask);
 
@@ -79,15 +78,15 @@ export default class Task {
           trashIcon.classList.add('hide');
           li.classList.remove('background');
         }
-      }
+      };
+
       /* Listeners when the user clicks or taps */
       window.addEventListener('mousedown', hideRemoveEdit);
       window.addEventListener('touchstart', hideRemoveEdit);
-    }
+    };
 
     /* A click listener to show the remove icon and modify the task */
     pDescription.addEventListener('click', showRemoveEdit);
-    
   }
 
   storage() {
