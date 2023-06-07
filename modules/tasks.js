@@ -44,6 +44,16 @@ export default class Task {
       trashIcon.classList.remove('hide');
       li.classList.add('background');
 
+      const editTask = () => {
+        /* Changes the description of the specific task */
+        task.description = pDescription.value;
+        /* Actualize the local storage */
+        localStorage.setItem('tasks', JSON.stringify(this.tasks));
+      }
+
+      /* Save the info in the textarea every time the user modifies it */
+      pDescription.addEventListener('input', editTask);
+
       const hideRemoveEdit = (event) => {
         /* Check if the li element not contains the target element */
         if (!li.contains(event.target)) {
