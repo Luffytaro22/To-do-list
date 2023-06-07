@@ -19,6 +19,7 @@ export default class Task {
     const pDescription = document.createElement('p');
     const dotsIcon = document.createElement('i');
     const div = document.createElement('div');
+    const trashIcon = document.createElement('i');
 
     /* Assign classes and attributes */
     li.classList.add('tasks');
@@ -27,12 +28,14 @@ export default class Task {
     checkbox.value = this.status;
     pDescription.textContent = task.description;
     dotsIcon.classList.add('fa-solid', 'fa-ellipsis-vertical');
+    trashIcon.classList.add('fa-regular', 'fa-trash-can', 'hide');
 
     /* Append elements */
     div.appendChild(checkbox);
     div.appendChild(pDescription);
     li.appendChild(div);
     li.appendChild(dotsIcon);
+    li.appendChild(trashIcon);
     tasksContainer.insertBefore(li, clearButton);
     index += 1;
   }
