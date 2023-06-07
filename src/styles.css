@@ -22,9 +22,15 @@ h1 {
   display: none;
 }
 
-#tasks-container p {
+#tasks-container textarea {
   font-weight: 600;
   max-width: 80%;
+  font-family: Yuji Hentaigana Akebono, sans-serif;
+  overflow: auto;
+  resize: none;
+  outline: none;
+  border: none;
+  padding-top: 15px;
 }
 
 #list-container {
