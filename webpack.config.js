@@ -26,12 +26,6 @@ module.exports = {
       },
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
-        loader: 'file-loader',
-        options: {
-          name: '[name].[ext]',
-          outputPath: 'assets/',
-          publicPath: '../src/assets/',
-        },
       },
     ],
   },

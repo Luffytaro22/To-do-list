@@ -1,3 +1,4 @@
+import TaskConstructor from './constructor.js';
 import { tasksContainer, clearButton } from './elements.js';
 
 let index = 0;
@@ -52,9 +53,6 @@ export default class Task {
         localStorage.setItem('tasks', JSON.stringify(this.tasks));
       };
 
-      /* Save the info in the textarea every time the user modifies it */
-      pDescription.addEventListener('input', editTask);
-
       /* A function to remove the tasks */
       const removeTask = () => {
         /* Eliminates the selected task */
@@ -68,11 +66,9 @@ export default class Task {
         /* Actualize the local storage */
         localStorage.setItem('tasks', JSON.stringify(this.tasks));
         /* Removes the element in the DOM */
-        li.remove();
-        index++;
+        tasksContainer.removeChild(li);
+        index += 1;
       };
-
-      trashIcon.addEventListener('click', removeTask);
 
       const hideRemoveEdit = (event) => {
         /* Check if the li element not contains the target element */
@@ -82,6 +78,11 @@ export default class Task {
           li.classList.remove('background');
         }
       };
+
+      /* Save the info in the textarea every time the user modifies it */
+      pDescription.addEventListener('input', editTask);
+
+      trashIcon.addEventListener('click', removeTask);
 
       /* Listeners when the user clicks or taps */
       window.addEventListener('mousedown', hideRemoveEdit);
