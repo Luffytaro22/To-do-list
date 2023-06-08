@@ -4,6 +4,7 @@ import Task from './tasks.js';
 export default class Clear extends Task {
   constructor() {
     super();
+    this.void = 1;
   }
 
   clearButton() {

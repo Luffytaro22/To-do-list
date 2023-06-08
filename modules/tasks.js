@@ -1,4 +1,3 @@
-import TaskConstructor from './constructor.js';
 import { tasksContainer, clearButton } from './elements.js';
 
 let index = 0;
@@ -40,23 +39,22 @@ export default class Task {
 
     const changeStatus = () => {
       this.tasks = JSON.parse(localStorage.getItem('tasks'));
-        if (checkbox.checked) {
-          this.tasks[task.index].completed = true;
-          pDescription.classList.add('line-through');
-          /* Actualize the local storage */
-          localStorage.setItem('tasks', JSON.stringify(this.tasks));
-        } else {
-          this.tasks[task.index].completed = false;
-          pDescription.classList.remove('line-through');
-          /* Actualize the local storage */
-          localStorage.setItem('tasks', JSON.stringify(this.tasks));
-        }
+      if (checkbox.checked) {
+        this.tasks[task.index].completed = true;
+        pDescription.classList.add('line-through');
+        /* Actualize the local storage */
+        localStorage.setItem('tasks', JSON.stringify(this.tasks));
+      } else {
+        this.tasks[task.index].completed = false;
+        pDescription.classList.remove('line-through');
+        /* Actualize the local storage */
+        localStorage.setItem('tasks', JSON.stringify(this.tasks));
+      }
     };
 
     checkbox.addEventListener('click', changeStatus);
 
     const showRemoveEdit = () => {
-      //this.tasks = JSON.parse(localStorage.getItem('tasks'));
       dotsIcon.classList.add('hide');
       trashIcon.classList.remove('hide');
       li.classList.add('background');
@@ -90,7 +88,6 @@ export default class Task {
       };
 
       const hideRemoveEdit = (event) => {
-        //this.tasks = JSON.parse(localStorage.getItem('tasks'));
         /* Check if the li element not contains the target element */
         if (!li.contains(event.target)) {
           dotsIcon.classList.remove('hide');
@@ -100,7 +97,6 @@ export default class Task {
       };
 
       /* Save the info in the textarea every time the user modifies it */
-      
       trashIcon.addEventListener('click', removeTask);
       pDescription.addEventListener('input', editTask);
 
