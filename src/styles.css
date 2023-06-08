@@ -26,6 +26,10 @@ i:hover {
   display: none;
 }
 
+.line-through {
+  text-decoration: line-through;
+}
+
 #tasks-container textarea {
   font-weight: 600;
   width: 65vw;
