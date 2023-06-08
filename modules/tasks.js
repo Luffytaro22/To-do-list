@@ -39,14 +39,14 @@ export default class Task {
     index += 1;
 
     const changeStatus = () => {
-      //this.tasks = JSON.parse(localStorage.getItem('tasks'));
+      this.tasks = JSON.parse(localStorage.getItem('tasks'));
         if (checkbox.checked) {
-          task.completed = true;
+          this.tasks[task.index].completed = true;
           pDescription.classList.add('line-through');
           /* Actualize the local storage */
           localStorage.setItem('tasks', JSON.stringify(this.tasks));
         } else {
-          task.completed = false;
+          this.tasks[task.index].completed = false;
           pDescription.classList.remove('line-through');
           /* Actualize the local storage */
           localStorage.setItem('tasks', JSON.stringify(this.tasks));
