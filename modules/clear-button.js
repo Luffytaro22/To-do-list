@@ -15,9 +15,9 @@ export default class Clear extends Task {
     /* Actualize the local storage */
     localStorage.setItem('tasks', JSON.stringify(this.tasks));
     const lis = document.querySelectorAll('.remove');
-      lis.forEach((li) => {
-        tasksContainer.removeChild(li);
-      });
-      this.displayTasks();
+    lis.forEach((li) => {
+      tasksContainer.removeChild(li);
+    });
+    this.displayTasks();
   }
 }
