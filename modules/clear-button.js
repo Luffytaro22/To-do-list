@@ -1,4 +1,4 @@
-import { checks } from './elements.js';
+import { tasksContainer } from './elements.js';
 import Task from './tasks.js';
 
 export default class Clear extends Task {
@@ -7,14 +7,17 @@ export default class Clear extends Task {
   }
 
   clearButton() {
+    this.tasks = JSON.parse(localStorage.getItem('tasks'));
     this.tasks = this.tasks.filter((obj) => obj.completed === false);
+    for (let i = 0; i < this.tasks.length; i += 1) {
+      this.tasks[i].index = i;
+    }
     /* Actualize the local storage */
     localStorage.setItem('tasks', JSON.stringify(this.tasks));
-    checks.forEach((check) => {
-      if (check.checked) {
-        /* Gets the li element because the checkbox it's inside a div */
-        check.parentNode.parentNode.remove();
-      }
-    });
+    const lis = document.querySelectorAll('.remove');
+      lis.forEach((li) => {
+        tasksContainer.removeChild(li);
+      });
+      this.displayTasks();
   }
 }
