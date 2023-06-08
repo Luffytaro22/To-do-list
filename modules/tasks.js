@@ -5,11 +5,9 @@ let index = 0;
 
 export default class Task {
   constructor() {
-    this.tasks = [];
+    this.tasks = localStorage.getItem('tasks') ? JSON.parse(localStorage.getItem('tasks')) : [];
     /* Initialize the array with the information in the local storage */
-    if (localStorage.getItem('tasks')) {
-      this.tasks = JSON.parse(localStorage.getItem('tasks'));
-    }
+    this.index = index;
   }
 
   createTask(task) {
@@ -22,13 +20,14 @@ export default class Task {
     const trashIcon = document.createElement('i');
 
     /* Assign classes and attributes */
-    li.classList.add('tasks');
+    li.classList.add('tasks', 'remove');
     div.classList.add('div-check');
     checkbox.type = 'checkbox';
     checkbox.value = this.status;
     pDescription.textContent = task.description;
     dotsIcon.classList.add('fa-solid', 'fa-ellipsis-vertical');
     trashIcon.classList.add('fa-regular', 'fa-trash-can', 'hide');
+    trashIcon.id = index;
 
     /* Append elements */
     div.appendChild(checkbox);
@@ -40,6 +39,7 @@ export default class Task {
     index += 1;
 
     const changeStatus = () => {
+      //this.tasks = JSON.parse(localStorage.getItem('tasks'));
         if (checkbox.checked) {
           task.completed = true;
           pDescription.classList.add('line-through');
@@ -56,12 +56,14 @@ export default class Task {
     checkbox.addEventListener('click', changeStatus);
 
     const showRemoveEdit = () => {
+      //this.tasks = JSON.parse(localStorage.getItem('tasks'));
       dotsIcon.classList.add('hide');
       trashIcon.classList.remove('hide');
       li.classList.add('background');
 
       /* A function to edit the tasks */
       const editTask = () => {
+        //this.tasks = JSON.parse(localStorage.getItem('tasks'));
         /* Changes the description of the specific task */
         task.description = pDescription.value;
         /* Actualize the local storage */
@@ -69,27 +71,26 @@ export default class Task {
       };
 
       /* A function to remove the tasks */
-      const removeTask = () => {
+      const removeTask = (event) => {
         /* Eliminates the selected task */
         this.tasks = JSON.parse(localStorage.getItem('tasks'));
-        this.tasks = this.tasks.filter((obj) => obj.index !== task.index);
-        /* Iterate through the array beginning at the eliminated index and changes the indexes */
-        /*this.tasks.forEach((task, i) => {
-          task.index = i;
-          index = i;
-        });*/
-        for (let i = task.index; i < this.tasks.length; i += 1) {
+        this.tasks = this.tasks.filter((obj) => obj.index !== Number(event.target.id));
+        for (let i = 0; i < this.tasks.length; i += 1) {
           this.tasks[i].index = i;
-          index = i;
         }
         /* Actualize the local storage */
         localStorage.setItem('tasks', JSON.stringify(this.tasks));
         /* Removes the element in the DOM */
-        tasksContainer.removeChild(li);
-        index += 1;
+        const lis = document.querySelectorAll('.remove');
+        lis.forEach((li) => {
+          tasksContainer.removeChild(li);
+        });
+        index = 0;
+        this.displayTasks();
       };
 
       const hideRemoveEdit = (event) => {
+        //this.tasks = JSON.parse(localStorage.getItem('tasks'));
         /* Check if the li element not contains the target element */
         if (!li.contains(event.target)) {
           dotsIcon.classList.remove('hide');
@@ -104,8 +105,8 @@ export default class Task {
       trashIcon.addEventListener('click', removeTask);
 
       /* Listeners when the user clicks or taps */
-      //window.addEventListener('mousedown', hideRemoveEdit);
-      //window.addEventListener('touchstart', hideRemoveEdit);
+      document.addEventListener('mousedown', hideRemoveEdit);
+      document.addEventListener('touchstart', hideRemoveEdit);
     };
 
     /* A click listener to show the remove icon and modify the task */
@@ -114,7 +115,7 @@ export default class Task {
 
   storage() {
     /* Add the object to the array */
-    this.tasks.push({ description: `${this.description}`, completed: false, index: index });
+    this.tasks.push({ description: `${this.description}`, completed: false, index: this.index });
 
     /* Create the tasks key in the local storage */
     localStorage.setItem('tasks', JSON.stringify(this.tasks));
