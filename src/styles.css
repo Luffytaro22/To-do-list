@@ -26,6 +26,10 @@ i:hover {
   display: none;
 }
 
+.line-through {
+  text-decoration: line-through;
+}
+
 #tasks-container textarea {
   font-weight: 600;
   width: 65vw;
@@ -91,4 +95,9 @@ i:hover {
   font-family: Yuji Hentaigana Akebono, sans-serif;
   font-style: italic;
   font-weight: 600;
+}
+
+#clear-button:hover {
+  cursor: pointer;
+  text-decoration: underline;
 }
