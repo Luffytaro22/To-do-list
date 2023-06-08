@@ -104,8 +104,8 @@ export default class Task {
       trashIcon.addEventListener('click', removeTask);
 
       /* Listeners when the user clicks or taps */
-      window.addEventListener('mousedown', hideRemoveEdit);
-      window.addEventListener('touchstart', hideRemoveEdit);
+      //window.addEventListener('mousedown', hideRemoveEdit);
+      //window.addEventListener('touchstart', hideRemoveEdit);
     };
 
     /* A click listener to show the remove icon and modify the task */
