@@ -96,3 +96,8 @@ i:hover {
   font-style: italic;
   font-weight: 600;
 }
+
+#clear-button:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
