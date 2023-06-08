@@ -63,9 +63,9 @@ export default class Task {
 
       /* A function to edit the tasks */
       const editTask = () => {
-        //this.tasks = JSON.parse(localStorage.getItem('tasks'));
+        this.tasks = JSON.parse(localStorage.getItem('tasks'));
         /* Changes the description of the specific task */
-        task.description = pDescription.value;
+        this.tasks[task.index].description = pDescription.value;
         /* Actualize the local storage */
         localStorage.setItem('tasks', JSON.stringify(this.tasks));
       };
@@ -100,9 +100,9 @@ export default class Task {
       };
 
       /* Save the info in the textarea every time the user modifies it */
-      pDescription.addEventListener('input', editTask);
-
+      
       trashIcon.addEventListener('click', removeTask);
+      pDescription.addEventListener('input', editTask);
 
       /* Listeners when the user clicks or taps */
       document.addEventListener('mousedown', hideRemoveEdit);
