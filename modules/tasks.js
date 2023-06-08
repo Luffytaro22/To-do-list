@@ -40,6 +40,20 @@ export default class Task {
     tasksContainer.insertBefore(li, clearButton);
     index += 1;
 
+    const changeStatus = () => {
+        if (checkbox.value === 'off') {
+          this.status = 'on';
+          checkbox.value = this.status;
+          task.completed = true;
+        } else if (checkbox.value === 'on') {
+          this.status = 'off';
+          checkbox.value = this.status;
+          task.completed = false;
+        }
+    };
+
+    checkbox.addEventListener('click', changeStatus);
+
     const showRemoveEdit = () => {
       dotsIcon.classList.add('hide');
       trashIcon.classList.remove('hide');
@@ -59,6 +73,10 @@ export default class Task {
         this.tasks = JSON.parse(localStorage.getItem('tasks'));
         this.tasks = this.tasks.filter((obj) => obj.index !== task.index);
         /* Iterate through the array beginning at the eliminated index and changes the indexes */
+        /*this.tasks.forEach((task, i) => {
+          task.index = i;
+          index = i;
+        });*/
         for (let i = task.index; i < this.tasks.length; i += 1) {
           this.tasks[i].index = i;
           index = i;
