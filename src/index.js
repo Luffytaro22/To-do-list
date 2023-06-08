@@ -23,6 +23,6 @@ enterIcon.addEventListener('click', () => {
   }
 });
 
-/*clearButton.addEventListener('click', () => {
+clearButton.addEventListener('click', () => {
   newClear.clearButton();
-});*/
+});
