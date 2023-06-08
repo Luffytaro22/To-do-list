@@ -60,10 +60,11 @@
 ## 💻 Getting Started <a name="getting-started"></a>
 
 ### Prerequisites
-In order to run this project you need to:
+In order to run this project you need to run this command:
 * Install npm <br>
-`npm init -y`
+`npm install`
 
+This will download all this dependencies: <br>
 * Install Webpack <br>
 `npm install webpack webpack-cli --save-dev`
 
