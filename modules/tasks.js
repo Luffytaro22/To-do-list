@@ -6,7 +6,6 @@ let index = 0;
 export default class Task {
   constructor() {
     this.tasks = [];
-    this.status = 'off';
     /* Initialize the array with the information in the local storage */
     if (localStorage.getItem('tasks')) {
       this.tasks = JSON.parse(localStorage.getItem('tasks'));
@@ -41,14 +40,16 @@ export default class Task {
     index += 1;
 
     const changeStatus = () => {
-        if (checkbox.value === 'off') {
-          this.status = 'on';
-          checkbox.value = this.status;
+        if (checkbox.checked) {
           task.completed = true;
-        } else if (checkbox.value === 'on') {
-          this.status = 'off';
-          checkbox.value = this.status;
+          pDescription.classList.add('line-through');
+          /* Actualize the local storage */
+          localStorage.setItem('tasks', JSON.stringify(this.tasks));
+        } else {
           task.completed = false;
+          pDescription.classList.remove('line-through');
+          /* Actualize the local storage */
+          localStorage.setItem('tasks', JSON.stringify(this.tasks));
         }
     };
 
