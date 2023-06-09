@@ -19,6 +19,7 @@ export default class Clear extends Task {
     lis.forEach((li) => {
       tasksContainer.removeChild(li);
     });
+    Task.index = 0;
     this.displayTasks();
   }
 }
