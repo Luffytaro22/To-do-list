@@ -1,6 +1,8 @@
 import './styles.css';
-
-import { taskInput, enterIcon, clearButton } from '../modules/elements.js';
+import darkMode from '../modules/dark-mode.js';
+import {
+  taskInput, enterIcon, clearButton, darkModeIcon,
+} from '../modules/elements.js';
 import addTask from '../modules/addTask.js';
 import Task from '../modules/tasks.js';
 import Clear from '../modules/clear-button.js';
@@ -26,3 +28,5 @@ enterIcon.addEventListener('click', () => {
 clearButton.addEventListener('click', () => {
   newClear.clearButton();
 });
+
+darkModeIcon.addEventListener('click', darkMode);
