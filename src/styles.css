@@ -45,6 +45,19 @@ i:hover {
 
 .background {
   background-color: blanchedalmond;
+  animation-name: li-background;
+  animation-timing-function: ease-in-out;
+  animation-duration: 0.5s;
+}
+
+@keyframes li-background {
+  from {
+    opacity: 0.5;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 #list-container {
@@ -79,6 +92,7 @@ i:hover {
   border: none;
   font-family: Yuji Hentaigana Akebono, sans-serif;
   font-weight: 600;
+  transition: all 0.5s ease-in-out;
 }
 
 #task {
@@ -100,4 +114,5 @@ i:hover {
 #clear-button:hover {
   cursor: pointer;
   text-decoration: underline;
+  background-color: red;
 }
