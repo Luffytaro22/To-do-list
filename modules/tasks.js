@@ -1,12 +1,13 @@
 import { tasksContainer, clearButton } from './elements.js';
 
-let index = 0;
 
 export default class Task {
+  static index = 0;
+
   constructor() {
     this.tasks = localStorage.getItem('tasks') ? JSON.parse(localStorage.getItem('tasks')) : [];
     /* Initialize the array with the information in the local storage */
-    this.index = index;
+    this.index = Task.index;
   }
 
   createTask(task) {
@@ -26,7 +27,7 @@ export default class Task {
     pDescription.textContent = task.description;
     dotsIcon.classList.add('fa-solid', 'fa-ellipsis-vertical');
     trashIcon.classList.add('fa-regular', 'fa-trash-can', 'hide');
-    trashIcon.id = index;
+    trashIcon.id = Task.index;
 
     /* Append elements */
     div.appendChild(checkbox);
@@ -35,7 +36,7 @@ export default class Task {
     li.appendChild(dotsIcon);
     li.appendChild(trashIcon);
     tasksContainer.insertBefore(li, clearButton);
-    index += 1;
+    Task.index += 1;
 
     const changeStatus = () => {
       this.tasks = JSON.parse(localStorage.getItem('tasks'));
@@ -83,7 +84,7 @@ export default class Task {
         lis.forEach((li) => {
           tasksContainer.removeChild(li);
         });
-        index = 0;
+        Task.index = 0;
         this.displayTasks();
       };
 
