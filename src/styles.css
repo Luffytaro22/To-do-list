@@ -43,6 +43,13 @@ i:hover {
   text-decoration: line-through;
 }
 
+#light-dark-icon {
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  font-size: 30px;
+}
+
 #tasks-container textarea {
   font-weight: 600;
   width: 65vw;
