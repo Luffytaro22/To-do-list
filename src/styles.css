@@ -1,12 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Yuji+Hentaigana+Akebono&display=swap');
 
+:root {
+  --background-color: #fff;
+  --text-color: black;
+}
+
+.dark-mode {
+  --background-color: black;
+  --text-color: white;
+}
+
 * {
   margin: 0;
   padding: 0;
+  color: var(--text-color);
 }
 
 body {
   font-family: Yuji Hentaigana Akebono, sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
 }
 
 main {
