@@ -1,7 +1,7 @@
 import './styles.css';
 import darkMode from '../modules/dark-mode.js';
 import {
-  taskInput, enterIcon, clearButton, darkModeIcon
+  taskInput, enterIcon, clearButton, darkModeIcon,
 } from '../modules/elements.js';
 import addTask from '../modules/addTask.js';
 import Task from '../modules/tasks.js';
