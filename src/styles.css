@@ -3,11 +3,19 @@
 :root {
   --background-color: #fff;
   --text-color: black;
+  --tasks-background: #fff;
+  --li-active: blanchedalmond;
+  --box-shadow: darkgrey;
+  --background-button: darkgrey;
 }
 
 .dark-mode {
-  --background-color: black;
+  --background-color: rgb(53, 53, 53);
   --text-color: white;
+  --tasks-background: rgb(4, 0, 66);
+  --li-active: black;
+  --box-shadow: rgb(0, 0, 0);
+  --background-button: black;
 }
 
 * {
@@ -20,6 +28,7 @@ body {
   font-family: Yuji Hentaigana Akebono, sans-serif;
   background-color: var(--background-color);
   color: var(--text-color);
+  transition: all 0.5s ease-in-out;
 }
 
 main {
@@ -80,7 +89,7 @@ i:hover {
 }
 
 .background {
-  background-color: blanchedalmond;
+  background-color: var(--li-active);
   animation-name: li-background;
   animation-timing-function: ease-in-out;
   animation-duration: 0.5s;
@@ -104,9 +113,10 @@ i:hover {
 
 #tasks-container {
   list-style: none;
-  box-shadow: 0 0 5px 3px darkgray;
+  box-shadow: 0 0 5px 3px var(--box-shadow);
   width: 90%;
   max-width: 443px;
+  background-color: var(--tasks-background);
 }
 
 .tasks {
@@ -128,6 +138,7 @@ i:hover {
   border: none;
   font-family: Yuji Hentaigana Akebono, sans-serif;
   font-weight: 600;
+  background-color: var(--background-button);
   transition: all 0.5s ease-in-out;
 }
 
@@ -150,5 +161,5 @@ i:hover {
 #clear-button:hover {
   cursor: pointer;
   text-decoration: underline;
-  background-color: red;
+  background: crimson;
 }
