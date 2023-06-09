@@ -43,11 +43,27 @@ i:hover {
   text-decoration: line-through;
 }
 
+.animation {
+  animation-name: dark-mode;
+  animation-timing-function: ease-in-out;
+  animation-duration: 0.5s;
+}
+
 #light-dark-icon {
   position: absolute;
   top: 5%;
   left: 5%;
   font-size: 30px;
+}
+
+@keyframes dark-mode {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 #tasks-container textarea {
