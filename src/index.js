@@ -6,7 +6,6 @@ import {
 import addTask from '../modules/addTask.js';
 import Task from '../modules/tasks.js';
 import Clear from '../modules/clear-button.js';
-import { handleDragStart, handleDragOver, handleDrop } from '../modules/drag.js';
 import webIcon from '../src/assets/lista-de-deseos.png';
 
 const myTasks = new Task();
