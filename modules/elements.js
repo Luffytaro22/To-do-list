@@ -9,9 +9,11 @@ const descriptions = document.querySelectorAll('textarea');
 const dotsIcons = document.querySelectorAll('.fa-ellipsis-vertical');
 const trashIcons = document.querySelectorAll('.fa-trash-can');
 const darkModeIcon = document.querySelector('#light-dark-icon');
+const select = document.querySelector('#font');
+const root = document.documentElement;
 
 export {
   listContainer, tasksContainer, taskInput, clearButton,
   enterIcon, checks, lis, descriptions, dotsIcons,
-  trashIcons, darkModeIcon,
+  trashIcons, darkModeIcon, select, root,
 };
