@@ -138,6 +138,7 @@ i:hover {
   justify-content: center;
   margin-bottom: 30px;
   gap: 10px;
+  padding: 0 20px;
 }
 
 .tasks {
@@ -184,4 +185,22 @@ i:hover {
   cursor: pointer;
   text-decoration: underline;
   background: crimson;
+}
+
+@media only screen and (min-width: 768px) {
+  #tasks-container p, textarea {
+    font-size: 1.5em;
+  }
+
+  #fonts-container label {
+    font-size: 1.3em;
+  }
+
+  #task::placeholder {
+    font-size: 1.5em;
+  }
+
+  #clear-button {
+    font-size: 1.5em;
+  }
 }
