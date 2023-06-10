@@ -202,6 +202,10 @@ i:hover {
     font-size: 1.3em;
   }
 
+  #task {
+    font-size: 1.5em;
+  }
+
   #task::placeholder {
     font-size: 1.5em;
   }
