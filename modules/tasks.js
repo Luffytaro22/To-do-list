@@ -21,6 +21,7 @@ export default class Task {
 
     /* Assign classes and attributes */
     li.classList.add('tasks', 'remove');
+    li.draggable = true;
     div.classList.add('div-check');
     checkbox.type = 'checkbox';
     checkbox.value = this.status;
