@@ -24,9 +24,9 @@ export default class Task {
     li.draggable = true;
     div.classList.add('div-check');
     checkbox.type = 'checkbox';
-    checkbox.value = this.status;
     pDescription.textContent = task.description;
     dotsIcon.classList.add('fa-solid', 'fa-ellipsis-vertical');
+    dotsIcon.draggable = true;
     trashIcon.classList.add('fa-regular', 'fa-trash-can', 'hide');
     trashIcon.id = Task.index;
 
@@ -55,6 +55,27 @@ export default class Task {
     };
 
     checkbox.addEventListener('click', changeStatus);
+    let positionYInit, positionYFin, firstElem, lastElem;
+    dotsIcon.addEventListener('dragstart', (event) => {
+      console.log(event);
+      firstElem = event.target;
+      positionYInit = screenY;
+      event.target.parentNode.classList.add('drag');
+    });
+    dotsIcon.addEventListener('dragend', (event) => {
+      console.log(event);
+      lastElem = event.target;
+      positionYFin = screenY;
+      event.target.parentNode.classList.remove('drag');
+    });
+    dotsIcon.addEventListener('dragover', (event) => {
+      console.log(event);
+    });
+    dotsIcon.addEventListener('drop', (event) => {
+      firstElem.screenY = positionYFin;
+      lastElem.screenY = positionYInit;
+      event.target.parentNode.classList.remove('drag');
+    })
 
     const showRemoveEdit = () => {
       dotsIcon.classList.add('hide');
