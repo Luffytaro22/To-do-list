@@ -11,7 +11,7 @@
   --li-active: blanchedalmond;
   --box-shadow: darkgrey;
   --background-button: darkgrey;
-  --main-font: Yuji Hentaigana Akebono;
+  --main-font: yuji hentaigana akebono;
 }
 
 .dark-mode {
@@ -139,7 +139,7 @@ i:hover {
 
 #font {
   background-color: var(--background-color);
-  border-radius:5px;
+  border-radius: 5px;
 }
 
 #font option {
@@ -193,7 +193,8 @@ i:hover {
 }
 
 @media only screen and (min-width: 768px) {
-  #tasks-container p, textarea {
+  #tasks-container p,
+  textarea {
     font-size: 1.5em;
   }
 

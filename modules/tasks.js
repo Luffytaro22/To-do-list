@@ -1,6 +1,5 @@
 import { tasksContainer, clearButton } from './elements.js';
 
-
 export default class Task {
   static index = 0;
 
@@ -55,27 +54,19 @@ export default class Task {
     };
 
     checkbox.addEventListener('click', changeStatus);
-    let positionYInit, positionYFin, firstElem, lastElem;
+
     dotsIcon.addEventListener('dragstart', (event) => {
-      console.log(event);
-      firstElem = event.target;
-      positionYInit = screenY;
       event.target.parentNode.classList.add('drag');
     });
     dotsIcon.addEventListener('dragend', (event) => {
-      console.log(event);
-      lastElem = event.target;
-      positionYFin = screenY;
       event.target.parentNode.classList.remove('drag');
     });
     dotsIcon.addEventListener('dragover', (event) => {
       console.log(event);
     });
     dotsIcon.addEventListener('drop', (event) => {
-      firstElem.screenY = positionYFin;
-      lastElem.screenY = positionYInit;
       event.target.parentNode.classList.remove('drag');
-    })
+    });
 
     const showRemoveEdit = () => {
       dotsIcon.classList.add('hide');

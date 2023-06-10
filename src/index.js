@@ -1,13 +1,12 @@
 import './styles.css';
 import darkMode from '../modules/dark-mode.js';
 import {
-  taskInput, enterIcon, clearButton, darkModeIcon,
+  taskInput, enterIcon, clearButton, darkModeIcon, select,
 } from '../modules/elements.js';
 import addTask from '../modules/addTask.js';
 import Task from '../modules/tasks.js';
 import Clear from '../modules/clear-button.js';
-import webIcon from '../src/assets/lista-de-deseos.png';
-import { select } from '../modules/elements.js';
+import webIcon from './assets/lista-de-deseos.png';
 import changeFont from '../modules/fonts.js';
 
 const myTasks = new Task();
