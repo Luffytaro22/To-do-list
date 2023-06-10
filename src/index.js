@@ -9,7 +9,6 @@ import Clear from '../modules/clear-button.js';
 import { handleDragStart, handleDragOver, handleDrop } from '../modules/drag.js';
 import webIcon from '../src/assets/lista-de-deseos.png';
 
-const dotsIcons = document.querySelectorAll('.fa-ellipsis-vertical');
 const myTasks = new Task();
 myTasks.displayTasks();
 
@@ -38,9 +37,3 @@ clearButton.addEventListener('click', () => {
 });
 
 darkModeIcon.addEventListener('click', darkMode);
-
-dotsIcons.forEach((icon) => {
-  icon.addEventListener('dragstart', handleDragStart);
-  icon.addEventListener('dragover', handleDragOver);
-  icon.addEventListener('drop', handleDrop);
-});
