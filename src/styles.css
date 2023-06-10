@@ -60,7 +60,7 @@ i:hover {
 
 .drag {
   opacity: 1;
-  background-color: red;
+  border: 1px solid blue;
 }
 
 #light-dark-icon {
