@@ -129,16 +129,21 @@ i:hover {
   background-color: var(--tasks-background);
 }
 
-#tasks-container p, textarea {
-  font-size: 1.2em;
-}
-
 #fonts-container {
   display: flex;
   justify-content: center;
   margin-bottom: 30px;
   gap: 10px;
   padding: 0 20px;
+}
+
+#font {
+  background-color: var(--background-color);
+  border-radius:5px;
+}
+
+#font option {
+  padding: 5px 1px;
 }
 
 .tasks {
@@ -201,6 +206,6 @@ i:hover {
   }
 
   #clear-button {
-    font-size: 1.5em;
+    font-size: 1.2em;
   }
 }
