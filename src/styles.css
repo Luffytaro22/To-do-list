@@ -1,4 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Yuji+Hentaigana+Akebono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
 
 :root {
   --background-color: #fff;
@@ -7,6 +11,7 @@
   --li-active: blanchedalmond;
   --box-shadow: darkgrey;
   --background-button: darkgrey;
+  --main-font: Yuji Hentaigana Akebono;
 }
 
 .dark-mode {
@@ -25,7 +30,7 @@
 }
 
 body {
-  font-family: Yuji Hentaigana Akebono, sans-serif;
+  font-family: var(--main-font), sans-serif;
   background-color: var(--background-color);
   color: var(--text-color);
   transition: all 0.5s ease-in-out;
@@ -84,7 +89,7 @@ i:hover {
   font-weight: 600;
   width: 65vw;
   max-width: 340px;
-  font-family: Yuji Hentaigana Akebono, sans-serif;
+  font-family: var(--main-font), sans-serif;
   overflow: auto;
   resize: none;
   outline: none;
@@ -141,7 +146,7 @@ i:hover {
   width: 100%;
   padding: 20px 20px;
   border: none;
-  font-family: Yuji Hentaigana Akebono, sans-serif;
+  font-family: var(--main-font), sans-serif;
   font-weight: 600;
   background-color: var(--background-button);
   transition: all 0.5s ease-in-out;
@@ -152,13 +157,13 @@ i:hover {
   outline: none;
   padding: 5px 0;
   width: 90%;
-  font-family: Yuji Hentaigana Akebono, sans-serif;
+  font-family: var(--main-font), sans-serif;
   font-weight: 600;
   background: none;
 }
 
 #task::placeholder {
-  font-family: Yuji Hentaigana Akebono, sans-serif;
+  font-family: var(--main-font), sans-serif;
   font-style: italic;
   font-weight: 600;
 }
