@@ -87,7 +87,7 @@ i:hover {
 
 #tasks-container textarea {
   font-weight: 600;
-  width: 65vw;
+  width: 55vw;
   max-width: 340px;
   font-family: var(--main-font), sans-serif;
   overflow: auto;
@@ -129,6 +129,17 @@ i:hover {
   background-color: var(--tasks-background);
 }
 
+#tasks-container p, textarea {
+  font-size: 1.2em;
+}
+
+#fonts-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+  gap: 10px;
+}
+
 .tasks {
   display: flex;
   justify-content: space-between;
@@ -166,6 +177,7 @@ i:hover {
   font-family: var(--main-font), sans-serif;
   font-style: italic;
   font-weight: 600;
+  font-size: 1.2em;
 }
 
 #clear-button:hover {
