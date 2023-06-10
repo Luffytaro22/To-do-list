@@ -7,6 +7,8 @@ import addTask from '../modules/addTask.js';
 import Task from '../modules/tasks.js';
 import Clear from '../modules/clear-button.js';
 import webIcon from '../src/assets/lista-de-deseos.png';
+import { select } from '../modules/elements.js';
+import changeFont from '../modules/fonts.js';
 
 const myTasks = new Task();
 myTasks.displayTasks();
@@ -36,3 +38,5 @@ clearButton.addEventListener('click', () => {
 });
 
 darkModeIcon.addEventListener('click', darkMode);
+
+select.addEventListener('change', changeFont);
