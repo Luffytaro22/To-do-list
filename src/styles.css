@@ -58,6 +58,11 @@ i:hover {
   animation-duration: 0.5s;
 }
 
+.drag {
+  opacity: 1;
+  background-color: red;
+}
+
 #light-dark-icon {
   position: absolute;
   top: 5%;
