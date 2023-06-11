@@ -24,12 +24,12 @@
 }
 
 .rose-mode {
-  --background-color: #930d29;
-  --text-color: #000000;
-  --tasks-background: rgb(248, 56, 243);
-  --li-active: crimson;
+  --background-color: #c759bd;
+  --text-color: white;
+  --tasks-background: #930d29;
+  --li-active: #8a741d;
   --box-shadow: #6e480e;
-  --background-button: #ff1a42;
+  --background-button: #a46b03;
 }
 
 .yellow-mode {
@@ -45,6 +45,7 @@
   margin: 0;
   padding: 0;
   color: var(--text-color);
+  font-style: italic;
 }
 
 body {
@@ -213,19 +214,19 @@ i:hover {
 @media only screen and (min-width: 768px) {
   #tasks-container p,
   textarea {
-    font-size: 1.5em;
+    font-size: 1.3em;
   }
 
-  #fonts-container label {
+  .display-containers label {
     font-size: 1.3em;
   }
 
   #task {
-    font-size: 1.5em;
+    font-size: 1.3em;
   }
 
   #task::placeholder {
-    font-size: 1.5em;
+    font-size: 1.3em;
   }
 
   #clear-button {
