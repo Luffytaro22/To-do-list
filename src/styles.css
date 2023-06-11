@@ -23,10 +23,29 @@
   --background-button: black;
 }
 
+.rose-mode {
+  --background-color: #c759bd;
+  --text-color: white;
+  --tasks-background: #930d29;
+  --li-active: #8a741d;
+  --box-shadow: #6e480e;
+  --background-button: #a46b03;
+}
+
+.yellow-mode {
+  --background-color: #737303;
+  --text-color: white;
+  --tasks-background: brown;
+  --li-active: #000;
+  --box-shadow: black;
+  --background-button: #d08702;
+}
+
 * {
   margin: 0;
   padding: 0;
   color: var(--text-color);
+  font-style: italic;
 }
 
 body {
@@ -129,7 +148,7 @@ i:hover {
   background-color: var(--tasks-background);
 }
 
-#fonts-container {
+.display-containers {
   display: flex;
   justify-content: center;
   margin-bottom: 30px;
@@ -137,7 +156,7 @@ i:hover {
   padding: 0 20px;
 }
 
-#font {
+.selects {
   background-color: var(--background-color);
   border-radius: 5px;
 }
@@ -151,7 +170,7 @@ i:hover {
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
-  border-bottom: 1px solid darkgray;
+  border-bottom: 1px solid var(--box-shadow);
 }
 
 .div-check {
@@ -195,19 +214,19 @@ i:hover {
 @media only screen and (min-width: 768px) {
   #tasks-container p,
   textarea {
-    font-size: 1.5em;
+    font-size: 1.3em;
   }
 
-  #fonts-container label {
+  .display-containers label {
     font-size: 1.3em;
   }
 
   #task {
-    font-size: 1.5em;
+    font-size: 1.3em;
   }
 
   #task::placeholder {
-    font-size: 1.5em;
+    font-size: 1.3em;
   }
 
   #clear-button {
