@@ -24,11 +24,11 @@
 }
 
 .rose-mode {
-  --background-color: rgb(111, 6, 92);
-  --text-color: whitesmoke;
-  --tasks-background: rgb(252, 105, 250);
+  --background-color: #930d29;
+  --text-color: #000000;
+  --tasks-background: rgb(248, 56, 243);
   --li-active: crimson;
-  --box-shadow: pink;
+  --box-shadow: #6e480e;
   --background-button: #ff1a42;
 }
 
@@ -138,7 +138,7 @@ i:hover {
   background-color: var(--tasks-background);
 }
 
-#fonts-container {
+.display-containers {
   display: flex;
   justify-content: center;
   margin-bottom: 30px;
@@ -146,7 +146,7 @@ i:hover {
   padding: 0 20px;
 }
 
-#font {
+.selects {
   background-color: var(--background-color);
   border-radius: 5px;
 }
@@ -160,7 +160,7 @@ i:hover {
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
-  border-bottom: 1px solid darkgray;
+  border-bottom: 1px solid var(--box-shadow);
 }
 
 .div-check {
