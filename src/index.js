@@ -7,7 +7,7 @@ import addTask from '../modules/addTask.js';
 import Task from '../modules/tasks.js';
 import Clear from '../modules/clear-button.js';
 import webIcon from './assets/lista-de-deseos.png';
-import changeFont from '../modules/fonts.js';
+import { changeFont, setFont } from '../modules/fonts.js';
 
 const myTasks = new Task();
 myTasks.displayTasks();
@@ -20,7 +20,9 @@ Image.href = webIcon;
 Image.rel = 'icon';
 document.querySelector('head').appendChild(Image);
 
+/* Charge the theme and the font selected */
 window.addEventListener('DOMContentLoaded', setTheme);
+window.addEventListener('DOMContentLoaded', setFont);
 taskInput.addEventListener('keypress', (event) => {
   /* If the code of the keyword is 13 (enter) then calls the function */
   if (event.charCode === 13 && taskInput.value !== '') {
