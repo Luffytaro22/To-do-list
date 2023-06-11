@@ -2,12 +2,14 @@ import './styles.css';
 import { darkMode, setTheme } from '../modules/dark-mode.js';
 import {
   taskInput, enterIcon, clearButton, darkModeIcon, select,
+  selectTheme,
 } from '../modules/elements.js';
 import addTask from '../modules/addTask.js';
 import Task from '../modules/tasks.js';
 import Clear from '../modules/clear-button.js';
 import webIcon from './assets/lista-de-deseos.png';
 import { changeFont, setFont } from '../modules/fonts.js';
+import themeMode from '../modules/themes.js';
 
 const myTasks = new Task();
 myTasks.displayTasks();
@@ -43,3 +45,5 @@ clearButton.addEventListener('click', () => {
 darkModeIcon.addEventListener('click', darkMode);
 
 select.addEventListener('change', changeFont);
+
+selectTheme.addEventListener('change', themeMode);
