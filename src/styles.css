@@ -32,6 +32,15 @@
   --background-button: #ff1a42;
 }
 
+.yellow-mode {
+  --background-color: #737303;
+  --text-color: white;
+  --tasks-background: brown;
+  --li-active: #000000;
+  --box-shadow: black;
+  --background-button: #d08702;
+}
+
 * {
   margin: 0;
   padding: 0;
