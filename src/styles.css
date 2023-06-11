@@ -23,6 +23,15 @@
   --background-button: black;
 }
 
+.rose-mode {
+  --background-color: rgb(111, 6, 92);
+  --text-color: whitesmoke;
+  --tasks-background: rgb(252, 105, 250);
+  --li-active: crimson;
+  --box-shadow: pink;
+  --background-button: #ff1a42;
+}
+
 * {
   margin: 0;
   padding: 0;
