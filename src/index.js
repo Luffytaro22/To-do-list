@@ -1,5 +1,5 @@
 import './styles.css';
-import darkMode from '../modules/dark-mode.js';
+import { darkMode, setTheme } from '../modules/dark-mode.js';
 import {
   taskInput, enterIcon, clearButton, darkModeIcon, select,
 } from '../modules/elements.js';
@@ -19,6 +19,8 @@ const Image = document.createElement('link');
 Image.href = webIcon;
 Image.rel = 'icon';
 document.querySelector('head').appendChild(Image);
+
+window.addEventListener('DOMContentLoaded', setTheme);
 taskInput.addEventListener('keypress', (event) => {
   /* If the code of the keyword is 13 (enter) then calls the function */
   if (event.charCode === 13 && taskInput.value !== '') {
