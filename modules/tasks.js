@@ -1,4 +1,4 @@
-import { tasksContainer, clearButton } from './elements.js';
+import {tasksContainer, clearButton} from './elements.js';
 
 export default class Task {
   static index = 0;
@@ -35,7 +35,7 @@ export default class Task {
     li.appendChild(div);
     li.appendChild(dotsIcon);
     li.appendChild(trashIcon);
-    tasksContainer.insertBefore(li, clearButton);
+    document.getElementById('tasks-container').insertBefore(li, document.getElementById('clear-button'));
     Task.index += 1;
 
     const changeStatus = () => {
@@ -125,7 +125,7 @@ export default class Task {
 
   storage() {
     /* Add the object to the array */
-    this.tasks.push({ description: `${this.description}`, completed: false, index: this.index });
+    this.tasks.push({description: `${this.description}`, completed: false, index: this.index});
 
     /* Create the tasks key in the local storage */
     localStorage.setItem('tasks', JSON.stringify(this.tasks));
