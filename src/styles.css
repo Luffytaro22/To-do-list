@@ -26,10 +26,10 @@
 .rose-mode {
     --background-color: #e065d4;
     --text-color: white;
-    --tasks-background: #31aed3;
+    --tasks-background: #b08e6b;
     --li-active: #8a741d;
     --box-shadow: #6e480e;
-    --background-button: #b08e6b;
+    --background-button: #31aed3;
 }
 
 .yellow-mode {
