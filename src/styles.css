@@ -5,231 +5,231 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
 
 :root {
-  --background-color: #fff;
-  --text-color: black;
-  --tasks-background: #fff;
-  --li-active: blanchedalmond;
-  --box-shadow: darkgrey;
-  --background-button: darkgrey;
-  --main-font: yuji hentaigana akebono;
+    --background-color: #fff;
+    --text-color: black;
+    --tasks-background: #fff;
+    --li-active: blanchedalmond;
+    --box-shadow: darkgrey;
+    --background-button: darkgrey;
+    --main-font: yuji hentaigana akebono;
 }
 
 .dark-mode {
-  --background-color: rgb(53, 53, 53);
-  --text-color: white;
-  --tasks-background: rgb(4, 0, 66);
-  --li-active: black;
-  --box-shadow: rgb(0, 0, 0);
-  --background-button: black;
+    --background-color: rgb(53, 53, 53);
+    --text-color: white;
+    --tasks-background: rgb(4, 0, 66);
+    --li-active: black;
+    --box-shadow: rgb(0, 0, 0);
+    --background-button: black;
 }
 
 .rose-mode {
-  --background-color: #c759bd;
-  --text-color: white;
-  --tasks-background: #930d29;
-  --li-active: #8a741d;
-  --box-shadow: #6e480e;
-  --background-button: #a46b03;
+    --background-color: #e065d4;
+    --text-color: white;
+    --tasks-background: #31aed3;
+    --li-active: #8a741d;
+    --box-shadow: #6e480e;
+    --background-button: #b08e6b;
 }
 
 .yellow-mode {
-  --background-color: #737303;
-  --text-color: white;
-  --tasks-background: brown;
-  --li-active: #000;
-  --box-shadow: black;
-  --background-button: #d08702;
+    --background-color: #737303;
+    --text-color: white;
+    --tasks-background: brown;
+    --li-active: #000;
+    --box-shadow: black;
+    --background-button: #d08702;
 }
 
 * {
-  margin: 0;
-  padding: 0;
-  color: var(--text-color);
-  font-style: italic;
+    margin: 0;
+    padding: 0;
+    color: var(--text-color);
+    font-style: italic;
 }
 
 body {
-  font-family: var(--main-font), sans-serif;
-  background-color: var(--background-color);
-  color: var(--text-color);
-  transition: all 0.5s ease-in-out;
+    font-family: var(--main-font), sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: all 0.5s ease-in-out;
 }
 
 main {
-  min-height: calc(100vh);
+    min-height: calc(100vh);
 }
 
 h1 {
-  text-align: center;
-  margin: 50px 0;
+    text-align: center;
+    margin: 50px 0;
 }
 
 i:hover {
-  cursor: pointer;
+    cursor: pointer;
 }
 
 .hide {
-  display: none;
+    display: none;
 }
 
 .line-through {
-  text-decoration: line-through;
+    text-decoration: line-through;
 }
 
 .animation {
-  animation-name: dark-mode;
-  animation-timing-function: ease-in-out;
-  animation-duration: 0.5s;
+    animation-name: dark-mode;
+    animation-timing-function: ease-in-out;
+    animation-duration: 0.5s;
 }
 
 .drag {
-  opacity: 1;
-  border: 1px solid blue;
+    opacity: 1;
+    border: 1px solid blue;
 }
 
 #light-dark-icon {
-  position: absolute;
-  top: 5%;
-  left: 5%;
-  font-size: 30px;
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    font-size: 30px;
 }
 
 @keyframes dark-mode {
-  from {
-    opacity: 0;
-  }
+    from {
+        opacity: 0;
+    }
 
-  to {
-    opacity: 1;
-  }
+    to {
+        opacity: 1;
+    }
 }
 
 #tasks-container textarea {
-  font-weight: 600;
-  width: 55vw;
-  max-width: 340px;
-  font-family: var(--main-font), sans-serif;
-  overflow: auto;
-  resize: none;
-  outline: none;
-  border: none;
-  padding-top: 15px;
-  background: none;
+    font-weight: 600;
+    width: 55vw;
+    max-width: 340px;
+    font-family: var(--main-font), sans-serif;
+    overflow: auto;
+    resize: none;
+    outline: none;
+    border: none;
+    padding-top: 15px;
+    background: none;
 }
 
 .background {
-  background-color: var(--li-active);
-  animation-name: li-background;
-  animation-timing-function: ease-in-out;
-  animation-duration: 0.5s;
+    background-color: var(--li-active);
+    animation-name: li-background;
+    animation-timing-function: ease-in-out;
+    animation-duration: 0.5s;
 }
 
 @keyframes li-background {
-  from {
-    opacity: 0.5;
-  }
+    from {
+        opacity: 0.5;
+    }
 
-  to {
-    opacity: 1;
-  }
+    to {
+        opacity: 1;
+    }
 }
 
 #list-container {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
 }
 
 #tasks-container {
-  list-style: none;
-  box-shadow: 0 0 5px 3px var(--box-shadow);
-  width: 90%;
-  max-width: 443px;
-  background-color: var(--tasks-background);
+    list-style: none;
+    box-shadow: 0 0 5px 3px var(--box-shadow);
+    width: 90%;
+    max-width: 443px;
+    background-color: var(--tasks-background);
 }
 
 .display-containers {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 30px;
-  gap: 10px;
-  padding: 0 20px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    gap: 10px;
+    padding: 0 20px;
 }
 
 .selects {
-  background-color: var(--background-color);
-  border-radius: 5px;
+    background-color: var(--background-color);
+    border-radius: 5px;
 }
 
 #font option {
-  padding: 5px 1px;
+    padding: 5px 1px;
 }
 
 .tasks {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px;
-  border-bottom: 1px solid var(--box-shadow);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    border-bottom: 1px solid var(--box-shadow);
 }
 
 .div-check {
-  display: flex;
-  gap: 20px;
+    display: flex;
+    gap: 20px;
 }
 
 #clear-button {
-  width: 100%;
-  padding: 20px 20px;
-  border: none;
-  font-family: var(--main-font), sans-serif;
-  font-weight: 600;
-  background-color: var(--background-button);
-  transition: all 0.5s ease-in-out;
+    width: 100%;
+    padding: 20px 20px;
+    border: none;
+    font-family: var(--main-font), sans-serif;
+    font-weight: 600;
+    background-color: var(--background-button);
+    transition: all 0.5s ease-in-out;
 }
 
 #task {
-  border: none;
-  outline: none;
-  padding: 5px 0;
-  width: 90%;
-  font-family: var(--main-font), sans-serif;
-  font-weight: 600;
-  background: none;
+    border: none;
+    outline: none;
+    padding: 5px 0;
+    width: 90%;
+    font-family: var(--main-font), sans-serif;
+    font-weight: 600;
+    background: none;
 }
 
 #task::placeholder {
-  font-family: var(--main-font), sans-serif;
-  font-style: italic;
-  font-weight: 600;
-  font-size: 1.2em;
+    font-family: var(--main-font), sans-serif;
+    font-style: italic;
+    font-weight: 600;
+    font-size: 1.2em;
 }
 
 #clear-button:hover {
-  cursor: pointer;
-  text-decoration: underline;
-  background: crimson;
+    cursor: pointer;
+    text-decoration: underline;
+    background: crimson;
 }
 
 @media only screen and (min-width: 768px) {
-  #tasks-container p,
-  textarea {
-    font-size: 1.3em;
-  }
+    #tasks-container p,
+    textarea {
+        font-size: 1.3em;
+    }
 
-  .display-containers label {
-    font-size: 1.3em;
-  }
+    .display-containers label {
+        font-size: 1.3em;
+    }
 
-  #task {
-    font-size: 1.3em;
-  }
+    #task {
+        font-size: 1.3em;
+    }
 
-  #task::placeholder {
-    font-size: 1.3em;
-  }
+    #task::placeholder {
+        font-size: 1.3em;
+    }
 
-  #clear-button {
-    font-size: 1.2em;
-  }
+    #clear-button {
+        font-size: 1.2em;
+    }
 }
